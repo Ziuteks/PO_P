@@ -1,0 +1,100 @@
+import {
+  type JednostkaOdpowiedzialna,
+  type KategoriaUsterki,
+  RodzajMediow,
+} from '../types/domain';
+
+export const INITIAL_CATEGORIES: KategoriaUsterki[] = [
+  {
+    kodKategorii: 'OSW-LAT',
+    nazwa: 'Awaria oświetlenia ulicznego',
+    opis: 'Niedziałająca latarnia, migające źródło światła lub uszkodzony słup oświetleniowy.',
+    punktyBazowePriorytetu: 20,
+    czyZagrozenieBezpieczenstwa: false,
+    powiazanyRodzajMediow: RodzajMediow.OSWIETLENIE_ULICZNE,
+    czyAktywna: true,
+  },
+  {
+    kodKategorii: 'WOD-WYC',
+    nazwa: 'Wyciek wody / awaria wodociągu',
+    opis: 'Zalanie jezdni lub chodnika, zapadnięta studzienka kanalizacyjna.',
+    punktyBazowePriorytetu: 50,
+    czyZagrozenieBezpieczenstwa: true,
+    powiazanyRodzajMediow: RodzajMediow.WODOCIAGI_I_KANALIZACJA,
+    czyAktywna: true,
+  },
+  {
+    kodKategorii: 'DRG-UBY',
+    nazwa: 'Ubytek w nawierzchni drogi',
+    opis: 'Głęboka dziura w jezdni, uszkodzony krawężnik lub zapadnięta kostka brukowa.',
+    punktyBazowePriorytetu: 35,
+    czyZagrozenieBezpieczenstwa: true,
+    powiazanyRodzajMediow: RodzajMediow.INFRASTRUKTURA_DROGOWA,
+    czyAktywna: true,
+  },
+  {
+    kodKategorii: 'ENE-KAB',
+    nazwa: 'Zerwany przewód lub otwarta skrzynka energetyczna',
+    opis: 'Bezpośrednie zagrożenie porażeniem prądem w przestrzeni publicznej.',
+    punktyBazowePriorytetu: 80,
+    czyZagrozenieBezpieczenstwa: true,
+    powiazanyRodzajMediow: RodzajMediow.ENERGIA_ELEKTRYCZNA,
+    czyAktywna: true,
+  },
+  {
+    kodKategorii: 'ZIL-DRZ',
+    nazwa: 'Powalone drzewo lub konar',
+    opis: 'Zablokowany ciąg pieszy lub jezdnia przez powalone drzewo.',
+    punktyBazowePriorytetu: 40,
+    czyZagrozenieBezpieczenstwa: true,
+    powiazanyRodzajMediow: null,
+    czyAktywna: true,
+  },
+  {
+    kodKategorii: 'ARCH-TEST',
+    nazwa: 'Kategoria archiwalna (testowa)',
+    opis: 'Wycofana kategoria używana w starych zgłoszeniach.',
+    punktyBazowePriorytetu: 5,
+    czyZagrozenieBezpieczenstwa: false,
+    powiazanyRodzajMediow: RodzajMediow.INNE,
+    czyAktywna: false,
+  },
+];
+
+export const INITIAL_UNITS: JednostkaOdpowiedzialna[] = [
+  {
+    skrotNazwy: 'ZDIUM',
+    nazwaJednostki: 'Zarząd Dróg i Utrzymania Miasta',
+    emailKontaktowy: 'zgloszenia@zdium.wroc.pl',
+    telefonAlarmowy: '71 372 00 10',
+    czyAktywna: true,
+  },
+  {
+    skrotNazwy: 'MPWIK',
+    nazwaJednostki: 'Miejskie Przedsiębiorstwo Wodociągów i Kanalizacji',
+    emailKontaktowy: 'dyspozytor@mpwik.wroc.pl',
+    telefonAlarmowy: '994',
+    czyAktywna: true,
+  },
+  {
+    skrotNazwy: 'TAURON-DYS',
+    nazwaJednostki: 'Tauron Dystrybucja S.A. – Oddział Wrocław',
+    emailKontaktowy: 'awarie.wroclaw@tauron-dystrybucja.pl',
+    telefonAlarmowy: '991',
+    czyAktywna: true,
+  },
+  {
+    skrotNazwy: 'ZZM',
+    nazwaJednostki: 'Zarząd Zieleni Miejskiej',
+    emailKontaktowy: 'interwencje@zzm.wroc.pl',
+    telefonAlarmowy: '71 323 50 00',
+    czyAktywna: true,
+  },
+  {
+    skrotNazwy: 'WPO-STARE',
+    nazwaJednostki: 'Dawny Zakład Oczyszczania (Jednostka nieaktywna)',
+    emailKontaktowy: 'archiwum@wpo.wroc.pl',
+    telefonAlarmowy: '71 000 00 00',
+    czyAktywna: false,
+  },
+];
